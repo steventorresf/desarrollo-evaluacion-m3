@@ -42,7 +42,7 @@ router.delete('/list/:user_id/delete/:movie_id', async (req, res) => {
     }
 });
 
-router.put('/list/:id/rate', (req, res) => {
+router.put('/list/:user_id/rate', (req, res) => {
     res.send("Endpoint para calificar listas de otros usuarios");
 });
 
