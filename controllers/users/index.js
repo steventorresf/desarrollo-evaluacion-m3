@@ -3,6 +3,7 @@ const router = express.Router();
 const usersMethods = require('./methods');
 const { TBadRequest } = require('../../utils/throwError');
 
+// Crea un registro usuario
 router.post('/register', async (req, res) => {
     try {
         const user = await usersMethods.registerUser(req.body);
@@ -16,6 +17,7 @@ router.post('/register', async (req, res) => {
     }
 });
 
+// Realiza inicio de sesion a un usuario
 router.post('/login', async (req, res) => {
     const { user, password } = req.body;
     try {

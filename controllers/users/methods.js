@@ -23,6 +23,7 @@ const registerUser = async (payload) => {
     }
     catch (error) {
         if (error.code === 11000) throw TBadRequest('Este usuario no está disponible');
+        else if (error.name === 'ValidationError') throw TBadRequest(error.message);
         else throw TError(error.message);
     }
 };

@@ -7,10 +7,10 @@ app.use(express.urlencoded({ extended: true}));
 app.use(express.json());
 
 const usersController = require('./controllers/users');
-//const moviesController = require('./controllers/movies');
+const moviesController = require('./controllers/movies');
 
 app.use('/users', usersController);
-//app.use('/movies', moviesController);
+app.use('/movies', moviesController);
 
 app.get('/', async (req, res) => {
     res.send('Bienvenido a nuestro backend');
